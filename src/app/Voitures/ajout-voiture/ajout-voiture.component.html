@@ -1,0 +1,87 @@
+<div class="w3-main" style="margin-left:340px;margin-right:40px ">
+
+    <div class="container">
+
+       
+        <form #f="ngForm" (ngSubmit)="add(f)">
+             <!-- firstName validation start here -->
+             <div class="form-group">
+    
+                <label for="exampleFormControlInput1">Nom</label>
+                <input type="text" class="form-control" required name="nom" #nom="ngModel" ngModel >
+            </div>
+            <div class="alert alert-danger" *ngIf="nom.errors?.['required'] && nom.touched">
+                nom is required
+            </div>
+            
+            <!-- lastName validation end here -->
+
+            <!-- lastName validation start here -->
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Model</label>
+                <input type="text" class="form-control" placeholder="model" required name="model"  #model="ngModel" ngModel>
+            </div>
+            <div class="alert alert-danger" *ngIf="model.errors?.['required'] && model.touched">
+                model is required
+            </div>
+           
+
+            <!-- lastName validation start here -->
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Categorie</label>
+                <input type="text" class="form-control" placeholder="categorie" required name="categorie"  #categorie="ngModel" ngModel>
+            </div>
+            <div class="alert alert-danger" *ngIf="categorie.errors?.['required'] && categorie.touched">
+                categorie is required
+            </div>
+           
+            <!-- lastName validation end here -->
+
+
+            <!-- prix validation start here -->
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Prix</label>
+                <input type="number" class="form-control" placeholder="prix" required name="prix" #prix="ngModel" ngModel>
+            </div>
+            <div class="alert alert-danger" *ngIf="prix.errors?.['required'] && prix.touched">
+                prix is required
+            </div>
+            <!-- prix validation end here -->
+
+
+            <!-- image validation start here -->
+
+            <div class="form-group">
+                <label>image</label>
+                <input type="file" class="form-control " laceholder="image"  name="image" #image="ngModel" ngModel>
+
+            </div>
+            <div class="alert alert-danger" *ngIf="image.errors?.['required']&& image.touched">
+                image is required
+            </div>
+            <!-- Phone validation end here -->
+             <!-- lastName validation start here -->
+             <div class="form-group">
+                <label for="exampleFormControlInput1">NbrePlace</label>
+                <input type="text" class="form-control" placeholder="nbrePlace" required name="nbrePlace"  #nbrePlace="ngModel" ngModel>
+            </div>
+            <div class="alert alert-danger" *ngIf="nbrePlace.errors?.['required'] && nbrePlace.touched">
+                nbrePlace is required
+            </div>
+             <!-- puissance validation start here -->
+             <div class="form-group">
+                <label for="exampleFormControlInput1">puissance</label>
+                <input type="text" class="form-control" placeholder="puissance" required name="puissance"  #puissance="ngModel" ngModel>
+            </div>
+            <div class="alert alert-danger" *ngIf="puissance.errors?.['required'] && puissance.touched">
+                puissance is required
+            </div>
+            <button class="btn btn-primary" [disabled]="f.invalid" routerLink="/allproduit">Add Voiture</button>
+        </form>
+
+
+    </div>
+
+
+
+</div>
